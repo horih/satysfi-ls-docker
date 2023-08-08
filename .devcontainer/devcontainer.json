@@ -6,9 +6,15 @@
   "customizations": {
     "vscode": {
       "settings": {
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash"
+          }
+	      },
+	      "terminal.integrated.defaultProfile.linux": "bash",
         "satysfi-workshop.build.when": "onSave",
         "satysfi-workshop.languageServer.enabled": true,
-        "satysfi-workshop.mathPreview.when": "onHover"
+        "satysfi-workshop.mathPreview.when": "onHover",
       },
       "extensions": [
         "pickoba.satysfi-workshop"
