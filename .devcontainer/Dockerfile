@@ -20,6 +20,7 @@ COPY --from=0 /workdir/bin/satysfi-language-server  /usr/bin/
 RUN apt update \
     && DEBIAN_FRONTEND=noninteractive apt install -y \
     pdf2svg \
+    git \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
