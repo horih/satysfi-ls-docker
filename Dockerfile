@@ -38,14 +38,12 @@ RUN apt update \
 RUN useradd -m author
 USER author
 
-RUN opam init --disable-sandboxing --compiler 4.14.0 \
-    && eval $(opam env) \
+RUN opam init -y --disable-sandboxing --compiler 4.14.0 \
     && opam repository add satysfi-external https://github.com/gfngfn/satysfi-external-repo.git \
     && opam repository add satyrographos-repo https://github.com/na4zagin3/satyrographos-repo.git \
     && opam update \
     && opam -y depext satysfi satysfi-dist satyrographos \
     && opam install -y satysfi satysfi-dist satyrographos \
-    && eval $(opam env) \
     && satyrographos install
 
 ENTRYPOINT ["opam" "/bin/bash"]
