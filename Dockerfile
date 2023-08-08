@@ -44,7 +44,7 @@ RUN opam init -y --disable-sandboxing --compiler 4.14.0 \
     && opam update \
     && opam -y depext satysfi satysfi-dist satyrographos \
     && opam install -y satysfi satysfi-dist satyrographos \
-    && source ~/.profile \
+    && eval $(opam env) \
     && satyrographos install
 
-ENTRYPOINT ["opam" "/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
