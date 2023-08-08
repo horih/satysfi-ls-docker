@@ -1,5 +1,7 @@
-FROM horih/satysfi:latest
+FROM satysfi-ls:latest
 
-RUN opam install \
+RUN eval $(opam env) 
+
+RUN opam update && opam install \
     satysfi-class-stjarticle \
     && satyrographos install
