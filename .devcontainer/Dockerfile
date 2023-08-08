@@ -26,3 +26,5 @@ RUN apt update \
 
 RUN useradd -m author
 USER author
+
+ENTRYPOINT ["/bin/bash"]
