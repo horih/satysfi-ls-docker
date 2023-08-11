@@ -1,7 +1,6 @@
-FROM satysfi-ls:latest
+FROM docker-ls:latest 
 
-RUN eval $(opam env) 
-
-RUN opam update && opam install \
+RUN eval $(opam env) && opam update && opam install \
     satysfi-class-stjarticle \
     && satyrographos install
+
