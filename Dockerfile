@@ -43,10 +43,8 @@ RUN opam init -y --disable-sandboxing --compiler 4.14.0 \
     && opam repository add satyrographos-repo https://github.com/na4zagin3/satyrographos-repo.git \
     && opam update \
     && opam -y depext satysfi satysfi-dist satyrographos \
-    && opam install -y satysfi satysfi-dist satyrographos  
-
-RUN eval $(opam env) && satyrographos install
-
-RUN echo eval `opam config env` >> ~/.bashrc
+    && opam install -y satysfi satysfi-dist satyrographos \
+    && eval $(opam env) && satyrographos install \
+    && echo eval `opam config env` >> ~/.bashrc
 
 ENTRYPOINT ["/bin/bash"]
